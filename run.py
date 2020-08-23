@@ -3,6 +3,7 @@ from sanic import Sanic
 from sanic.response import text
 from ping import PingHandler
 
+
 app = Sanic("Litenet")
 app.config.from_envvar('MYAPP_SETTINGS')
 
@@ -18,5 +19,4 @@ def run(app, debug):
     app.run(host="127.0.0.1", port=5050, debug=debug)
 
 if __name__ == "__main__":
-    thread = Thread(target=run(app, debug=True))
-    thread.start()
+    run(app=app, debug=True)
